@@ -1,11 +1,10 @@
 #pragma once
 #include "genericState.h"
-#include  "Cwait.h"
-#include "Cwrq.h"
-class fWrq :public genericState
+#include "Cwait.h"
+class Wrq :public genericState
 {
 	genericState * onTimeOut(genericEvent * ev);
 	genericState * onError(genericEvent * ev);
 	genericState * onRack(genericEvent * ev);
-
+	genericState * onLack(genericEvent * ev);
 };
