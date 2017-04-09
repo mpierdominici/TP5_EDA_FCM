@@ -24,6 +24,18 @@ void genericFcm::dispatch(genericEvent * ev)
 	case R_RRQ:
 		newState = currentState->onRRrq(ev);
 		break;
+	case F_ACK:
+		newState = currentState->onFack(ev);
+		break;
+	case L_ACK:
+		newState = currentState->onLack(ev);
+		break;
+	case F_DATA:
+		newState = currentState->onFdata(ev);
+		break;
+	case L_DATA:
+		newState = currentState->onLdata(ev);
+		break;
 		
 	}
 	if (newState != NULL)
@@ -31,4 +43,5 @@ void genericFcm::dispatch(genericEvent * ev)
 		delete currentState;
 		currentState = newState;
 	}
+	delete ev;
 }

@@ -9,6 +9,9 @@ public:
 	virtual genericState * onError(genericEvent * ev);
 	virtual genericState * onRack(genericEvent * ev);
 	virtual genericState * onRdata(genericEvent * ev);
-
+	virtual genericState * onFack(genericEvent * ev);
+	virtual genericState * onLack(genericEvent * ev);
+	virtual genericState * onFdata(genericEvent * ev);
+	virtual genericState * onLdata(genericEvent * ev);
 };
 

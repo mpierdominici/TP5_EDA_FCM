@@ -1,6 +1,6 @@
 
 #include <Cstdio>
-#include "eventGeneraator.h"
+#include "eventGenerator.h"
 
 genericEvent * eventGenerator()
 {
