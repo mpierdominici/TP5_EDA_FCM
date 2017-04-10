@@ -1,0 +1,27 @@
+#include "CfWrq.h"
+
+genericState * fWrq::onTimeOut(genericEvent * ev)
+{
+	//evento:timeout
+	//accion: renvio el wrq
+
+	return (new fWrq);
+}
+
+genericState * fWrq::onError(genericEvent * ev)
+{
+	//evento: error
+	//accion:finalizo la comunicacion
+	//
+	return new wait ;
+}
+
+genericState * fWrq::onRack(genericEvent * ev)
+{
+	//evento:ack
+	//accion:envio dato
+	//
+	//
+	return new Wrq;
+}
+

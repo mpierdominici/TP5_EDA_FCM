@@ -29,3 +29,23 @@ genericState * genericState::onRdata(genericEvent * ev)
 {
 	return NULL;
 }
+
+genericState * genericState::onFack(genericEvent * ev)
+{
+	return NULL;
+}
+
+genericState * genericState::onLack(genericEvent * ev)
+{
+	return NULL;
+}
+
+genericState * genericState::onFdata(genericEvent * ev)
+{
+	return NULL;
+}
+
+genericState * genericState::onLdata(genericEvent * ev)
+{
+	return NULL;
+}
