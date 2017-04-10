@@ -5,44 +5,23 @@
 using namespace std;
 Graphic::Graphic(bool serverOrClient)
 {
-	switch (serverOrClient)
-	{
-		case true:
-			isAClient=true;
-			break;
-		case false:
-			isAClient=false;
-			break;
-	}
-	printBase();
-	actualEv = NULL;
-	lastEv = NULL;
+	isAClient=serverOrClient;
+	return;
 }
 
-void Graphic::printEv(genericEvent * myEvent)
+void Graphic::printOnScreen(char* actualEv, char* lastEv, char* executedAction)
 {
-	....
-}
-
-void Graphic::printExecutedAction(void)
-{
-	...
-}
-
-void Graphic::printBase(void)
-{
-	cout << string(50, '\n');
+	clrScreen();
 	if (isAClient == true)
 	{
-		cout << "Programa de simulacion de cliente TFTP implementado con FSM"<<endl<<endl;
-		cout << "Cunado el usuario presione las teclas de Eventos, entiende que se gene´ró un nuevo evento"<<endl;
-		cout << "y responde ante ese evento realizando una accion y cambiando el estado."<<endl<<endl;
-		cout << "Eventos		|			Status de la FSM			"<< endl << endl;
-		cout << "A = WRQ		|  Evento Recibido: "<< actualEv<<endl<<endl;
-		cout << "B = RRQ		|  Ultimo Evento recibido: "<< lastEv<<endl<<endl;
-		cout << "C = TIMEOUT	|  Accion Ejecutada: "<< DATO RECIBIDO COMO PARAMETRO<< endl<<endl;
-		cout << ...	
-
+		cout << "Programa de simulacion de cliente TFTP implementado con FSM" << endl << endl;
+		cout << "Cunado el usuario presione las teclas de Eventos, entiende que se gene´ró un nuevo evento" << endl;
+		cout << "y responde ante ese evento realizando una accion y cambiando el estado." << endl << endl;
+		cout << "Eventos		|			Status de la FSM			" << endl << endl;
+		cout << "Q = TIMEOUT	|  Evento Recibido: " << *actualEv << endl << endl;
+		cout << "W = DATA		|  Ultimo Evento recibido: " << *lastEv << endl << endl;
+		cout << "E = ACK		|  Accion Ejecutada: " << *executedAction << endl << endl;
+		cout << "R = ERROR		|" << endl << endl;
 	}
 	else
 	{
@@ -50,15 +29,19 @@ void Graphic::printBase(void)
 		cout << "Cunado el usuario presione las teclas de Eventos, entiende que se gene´ró un nuevo evento" << endl;
 		cout << "y responde ante ese evento realizando una accion y cambiando el estado." << endl << endl;
 		cout << "Eventos		|			Status de la FSM			" << endl << endl;
-		cout << "A = WRQ		|  Evento Recibido: " << actualEv << endl << endl;
-		cout << "B = RRQ		|  Ultimo Evento recibido: " << lastEv << endl << endl;
-		cout << "C = TIMEOUT	|  Accion Ejecutada: " << DATO RECIBIDO COMO PARAMETRO << endl << endl;
-		cout << ...
+		cout << "Q = WRQ		|  Evento Recibido: " << *actualEv << endl << endl;
+		cout << "W = RRQ		|  Ultimo Evento recibido: " << *lastEv << endl << endl;
+		cout << "E = TIMEOUT	|  Accion Ejecutada: " << *executedAction << endl << endl;
+		cout << "R = DATA		|" << endl << endl;
+		cout << "T = ACK		|" << endl << endl;
+		cout << "Y = ERROR		|" << endl << endl;
+		cout << "U = DATA		|" << endl << endl;
 	}
+	return;
 }
 
-void Graphic::printLastEv(void)
+void Graphic::clrScreen(void)
 {
-	...
+	cout << string(50, '\n');
+	return;
 }
-

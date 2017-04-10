@@ -161,6 +161,7 @@
     <ClInclude Include="genericEvent.h" />
     <ClInclude Include="genericFCM.h" />
     <ClInclude Include="genericState.h" />
+    <ClInclude Include="Graphic.h" />
     <ClInclude Include="servidor.h" />
     <ClInclude Include="Sestados.h" />
     <ClInclude Include="stdafx.h" />
@@ -178,6 +179,7 @@
     <ClCompile Include="genericEvent.cpp" />
     <ClCompile Include="genericFCM.cpp" />
     <ClCompile Include="genericState.cpp" />
+    <ClCompile Include="Graphic.cpp" />
     <ClCompile Include="servidor.cpp" />
     <ClCompile Include="Sestados.cpp" />
     <ClCompile Include="stdafx.cpp" />
