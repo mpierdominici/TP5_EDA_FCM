@@ -4,11 +4,14 @@
 #include "stdafx.h"
 #include "eventGenerator.h"
 #include "cliente.h"
+#include "servidor.h"
 #include "genericEvent.h"
 int main()
 {
 	bool quit = false;
+	bool clientState = false;
 	genericEvent * ev;
+	server s;
 	cliente c;
 	
 	
@@ -17,7 +20,15 @@ int main()
 		ev= eventGenerator();
 		if (ev != NULL)
 		{
-			c.dispatch(ev);
+			if (clientState)
+			{
+				c.dispatch(ev);
+			}
+			else
+			{
+				s.dispatch(ev);
+			}
+			
 
 		}
 		else
