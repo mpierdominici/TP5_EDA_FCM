@@ -5,11 +5,7 @@ class genericFcm
 {
 public:
 	void dispatch(genericEvent * ev);
-
-
 protected:
 	genericState  * currentState;
-
-
 };
 

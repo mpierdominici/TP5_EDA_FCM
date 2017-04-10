@@ -150,11 +150,17 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="genericEvent.h" />
+    <ClInclude Include="genericFCM.h" />
+    <ClInclude Include="genericState.h" />
+    <ClInclude Include="Graphic.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="genericEvent.cpp" />
+    <ClCompile Include="genericFCM.cpp" />
+    <ClCompile Include="genericState.cpp" />
+    <ClCompile Include="Graphic.cpp" />
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="TP5_EDA_FCM.cpp" />
   </ItemGroup>
