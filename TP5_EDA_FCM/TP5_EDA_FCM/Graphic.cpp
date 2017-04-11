@@ -1,47 +1,52 @@
 #include "Graphic.h"
-#include <cstdio>
-#include <iostrem>
-
+#include <iostream>
 using namespace std;
-Graphic::Graphic(bool serverOrClient)
+void clrScreen(void)
 {
-	isAClient=serverOrClient;
+	for (int i = 0; i < 50; i++)
+	{
+		cout << endl;
+	}
 	return;
 }
 
-void Graphic::printOnScreen(char* actualEv, char* lastEv, char* executedAction)
+void printOnScreen(char* actualEv, char* lastEv, char* executedAction, bool isAClient)
 {
 	clrScreen();
+
 	if (isAClient == true)
 	{
 		cout << "Programa de simulacion de cliente TFTP implementado con FSM" << endl << endl;
 		cout << "Cunado el usuario presione las teclas de Eventos, entiende que se gene´ró un nuevo evento" << endl;
 		cout << "y responde ante ese evento realizando una accion y cambiando el estado." << endl << endl;
-		cout << "Eventos		|			Status de la FSM			" << endl << endl;
-		cout << "Q = TIMEOUT	|  Evento Recibido: " << *actualEv << endl << endl;
-		cout << "W = DATA		|  Ultimo Evento recibido: " << *lastEv << endl << endl;
-		cout << "E = ACK		|  Accion Ejecutada: " << *executedAction << endl << endl;
-		cout << "R = ERROR		|" << endl << endl;
+		cout << "Eventos			|			Status de la FSM			" << endl << endl;
+		cout << "A = RWRQ		|  Evento Recibido: " << actualEv << endl << endl;
+		cout << "S = rRRQ		|  Ultimo Evento recibido: " << lastEv << endl << endl;
+		cout << "D = TIMEOUT		|  Accion Ejecutada: " << executedAction << endl << endl;
+		cout << "F = ERROR		|" << endl << endl;
+		cout << "G = ACK			|" << endl << endl;
+		cout << "H = DATA		|" << endl << endl;
+		cout << "J = lACK		|" << endl << endl;
+		cout << "K = lDATA		|" << endl << endl;
+		cout << "L = fACK		|" << endl << endl;
+		cout << "Z = fDATA		|" << endl << endl;
 	}
 	else
 	{
 		cout << "Programa de simulacion de Servidor TFTP implementado con FSM" << endl << endl;
 		cout << "Cunado el usuario presione las teclas de Eventos, entiende que se gene´ró un nuevo evento" << endl;
 		cout << "y responde ante ese evento realizando una accion y cambiando el estado." << endl << endl;
-		cout << "Eventos		|			Status de la FSM			" << endl << endl;
-		cout << "Q = WRQ		|  Evento Recibido: " << *actualEv << endl << endl;
-		cout << "W = RRQ		|  Ultimo Evento recibido: " << *lastEv << endl << endl;
-		cout << "E = TIMEOUT	|  Accion Ejecutada: " << *executedAction << endl << endl;
-		cout << "R = DATA		|" << endl << endl;
-		cout << "T = ACK		|" << endl << endl;
-		cout << "Y = ERROR		|" << endl << endl;
-		cout << "U = DATA		|" << endl << endl;
+		cout << "Eventos			|			Status de la FSM			" << endl << endl;
+		cout << "A = RWRQ		|  Evento Recibido: " << actualEv << endl << endl;
+		cout << "S = rRRQ		|  Ultimo Evento recibido: " << lastEv << endl << endl;
+		cout << "D = TIMEOUT		|  Accion Ejecutada: " << executedAction << endl << endl;
+		cout << "F = ERROR		|" << endl << endl;
+		cout << "G = ACK			|" << endl << endl;
+		cout << "H = DATA		|" << endl << endl;
+		cout << "J = lACK		|" << endl << endl;
+		cout << "K = lDATA		|" << endl << endl;
+		cout << "L = fACK		|" << endl << endl;
+		cout << "Z = fDATA		|" << endl << endl;
 	}
-	return;
-}
-
-void Graphic::clrScreen(void)
-{
-	cout << string(50, '\n');
 	return;
 }
